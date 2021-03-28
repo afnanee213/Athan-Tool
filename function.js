@@ -8,7 +8,7 @@ exports.FirebaseMessage = functions.firestore.document('files/{newFile}').onCrea
 
 
 
-const deviceToken = data.data().token;
+const token = data.data().token;
 
 
 var message = {
@@ -23,5 +23,5 @@ body: "message"
 
 };
 
-  return admin.messaging().sendToDevice(deviceToken, message);
+  return admin.messaging().sendToDevice(token, message);
 })
